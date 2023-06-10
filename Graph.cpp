@@ -74,8 +74,8 @@ void Graph::primMST() {
      //Vertex = 0;
 
     // creating non-edge priority queue entry to start MST
-    priority_queue<pqData> pdiddy;
-    pdiddy.top();
+    priority_queue<pqData> testingQ;
+    testingQ.top();
     weights[0] = 0;
     intoPQData.keyWeight = weights[0];
     intoPQData.keyDestinationVertex = 0;
@@ -84,9 +84,9 @@ void Graph::primMST() {
 
 
     //resultSet[0].parent = -1;
-    while (!(pdiddy.empty())) {
-        extractedPQData = pdiddy.top();
-        pdiddy.pop();
+    while (!(testingQ.empty())) {
+        extractedPQData = testingQ.top();
+        testingQ.pop();
         if (mst[extractedPQData.keyDestinationVertex]) {
             continue;
         }
@@ -100,13 +100,13 @@ void Graph::primMST() {
         }
 
         Edge temp = Edge(0, 0, 0);
-        Edge penis = Edge(intoPQData.keyWeight, intoPQData.keyWeight, intoPQData.keyWeight);
-        temp.setEdge(penis);
+        Edge testVar = Edge(intoPQData.keyWeight, intoPQData.keyWeight, intoPQData.keyWeight);
+        temp.setEdge(testVar);
         for (int i = 0; i < extractedPQData.keyDestinationVertex; i++) {
             if (mst[temp.getDestination()]) {
                 if (weights[temp.getDestination()] > temp.getWeight()) {
                     Edge daEdge = Edge(intoPQData.keyWeight, intoPQData.keyDestinationVertex, intoPQData.keySourceVertex);
-                    pdiddy.push(intoPQData);
+                    testingQ.push(intoPQData);
                     weights[temp.getDestination()] = temp.getWeight();
                 }
             }
