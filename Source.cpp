@@ -173,7 +173,7 @@ public:
 		pq.push(intoPQData);
 		
 		resultSet[0].parent = -1;//It is breaking right here
-		cout << "THE THICC THIGHS OF MITSURI: " << adjacencyListMST.size() << endl;
+		cout << "176" << adjacencyListMST.size() << endl;
 		cout << " I wonder if i can get this in on time: " << resultSet.size() << endl;
 		int i = 0;
 		while (!(pq.empty())) 
@@ -186,7 +186,7 @@ public:
 				continue;
 			}
 			mst[extractedPQData.keyDestinationVertex] = true;
-			cout << "should be before tan" << endl;
+			cout << "189" << endl;
 			if ((extractedPQData.keyDestinationVertex != 0) || (extractedPQData.keySourceVertex != 0)) {
 				//adjacencyListMST[j].push_back(edge(extractedPQData.keySourceVertex, extractedPQData.keyDestinationVertex, extractedPQData.keyWeight));
 				edge* ptr = &adjacencyListMST[extractedPQData.keyDestinationVertex].front();
@@ -202,10 +202,10 @@ public:
 				//addEdge(extractedPQData.keySourceVertex, extractedPQData.keyDestinationVertex, extractedPQData.keyWeight);
 				resultSet[extractedPQData.keyDestinationVertex].parent = extractedPQData.keySourceVertex;
 				resultSet[extractedPQData.keyDestinationVertex].weight = extractedPQData.keyWeight;
-				cout << "dang she hot" << endl;
+				cout << "205" << endl;
 				cout << endl << endl << endl << endl;
 			}
-			cout << endl << " dadada" << endl;
+			cout << endl << "208" << endl;
 
 			for (const auto& edge : adjacencyListMST[extractedPQData.keyDestinationVertex]) {
 				//for () {
